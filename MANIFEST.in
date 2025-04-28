@@ -1,0 +1,18 @@
+include README.md
+include LICENSE
+include requirements.txt
+
+# Includi tutti i file di dati nella distribuzione
+recursive-include fpocket/data *
+
+# Includi anche eventuali header (se usi pybind11 o Cython)
+recursive-include include *
+
+# Includi sorgenti C se servono per la build (per Cython)
+recursive-include c_src *
+
+# Includi la documentazione
+recursive-include docs *
+
+# Includi esempi
+recursive-include examples *

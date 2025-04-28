@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "wheel", "Cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpocket-py"
+version = "0.1.0"
+description = "Python bindings for the fpocket library using Cython."
+authors = [
+    { name="Il Tuo Nome", email="la_tua_email@example.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy",
+    "cython"
+]
+
+[tool.setuptools]
+packages = ["fpocket_py"]
+
+[tool.setuptools.package-data]
+"fpocket_py" = ["*.pxd", "*.pyx", "*.h", "*.c", "csrc/qhull/*.h", "csrc/qhull/*.c"]
+"fpocket_py.extras.vmd_plugins" = ["*"]
+
+[tool.setuptools.exclude-package-data]
+"fpocket_py" = ["tests/*"]
